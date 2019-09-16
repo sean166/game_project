@@ -1,0 +1,2 @@
+ let rec toBinary (x:int) = if x=0 then string(x) elif x=1 then string(x) else (toBinary(x/2)+string(x%2));; 
+//reference:https://richiban.uk/2013/07/19/converting-decimal-integers-to-binary-strings-in-different-languages/

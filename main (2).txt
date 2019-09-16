@@ -1,0 +1,76 @@
+#include <cstdlib>
+#include<iostream>
+#include <vector>
+#include <string>
+#include <random>
+using namespace std;
+
+
+/*
+ * 
+ */
+class BasicAccount{
+    protected:
+        int accountNumber;
+        float transactionFee;
+        float overdraftFee;
+        float balance;
+        vector<float>transactions;
+        
+    public:
+        BasicAccount(int accountNumber){
+            this->accountNumber=accountNumber;
+            
+        }
+        virtual void addTransaction(float amount)=0;
+        virtual void setBalance(float balance)=0;
+        virtual float getBalance()=0;
+       
+};
+class CheckingAccount:public BasicAccount {
+    private:
+        float transactionFee=0.1;
+        float overdraftFee=5.0;
+        float widthdraw;
+        float deposit;
+        float balance;
+        
+    public:
+        float setTransactionFee(){
+            this->transactionFee;
+        }
+        float getTransactionFee(){
+            return this->transactionFee;
+        }
+        float setOverdraftFee(){
+            this->overdraftFee;
+        }
+        float getOverdraftFee(){
+            return this->overdraftFee;
+        }
+        float setDeposit(){
+            this->deposit;
+        }
+        float getDeposit(){
+            return this->deposit;
+        }
+        
+        virtual void addTransaction(float amount){
+         
+        }
+        float getBalance(){
+            
+        }
+};
+
+
+int main(int argc, char** argv) {
+    CheckingAccount* check = new CheckingAccount();
+    check->setDeposit()= rand()%300+1;
+     //Number[10] = [0,1,2,3,4,5,6,7,8,9];
+    
+    
+
+    return 0;
+}
+
